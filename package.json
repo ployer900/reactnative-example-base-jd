@@ -1,0 +1,26 @@
+{
+	"name": "jdproject",
+	"version": "0.0.1",
+	"private": true,
+	"scripts": {
+	    "start": "node node_modules/react-native/local-cli/cli.js start",
+	    "iphone6": "react-native run-ios",
+	    "iphone5": "react-native run-ios --simulator=\"iPhone 5\"",
+	    "iphone4": "react-native run-ios --simulator=\"iPhone 4s\"",
+	    "bundle": "react-native bundle --entry-file index.ios.js --bundle-output ./ios/bundle/index.ios.jsbundle --platform ios --assets-dest ./ios/bundle --dev false",
+	    "test": "jest"
+	},
+	"dependencies": {
+		"react": "15.4.1",
+		"react-native": "0.39.2"
+	},
+	"devDependencies": {
+		"babel-jest": "18.0.0",
+		"babel-preset-react-native": "1.9.1",
+		"jest": "18.0.0",
+		"react-test-renderer": "15.4.1"
+	},
+	"jest": {
+		"preset": "react-native"
+	}
+}
