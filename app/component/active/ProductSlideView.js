@@ -13,7 +13,7 @@ import {
     TouchableHighlight
 } from 'react-native';
 
-import common from '../../util/common';
+import {SCREEN_W, createStyles} from '../../util/common';
 
 export default class ProductSlideView extends Component {
     constructor(props) {
@@ -41,17 +41,16 @@ export default class ProductSlideView extends Component {
  * 相关样式
  * @type {[type]}
  */
-const containDimenson = common.getScreenDimension();
-const styles = common.createStyles({
+const styles = createStyles({
     pdWrap: {
-        width: containDimenson.width / 4,
+        width: SCREEN_W / 4,
         marginLeft: 2,
         marginRight: 2,
         backgroundColor: '#ffffff'
     },
     pdPic: {
-        width: containDimenson.width / 4,
-        height: containDimenson.width / 4,
+        width: SCREEN_W / 4,
+        height: SCREEN_W / 4,
         backgroundColor: '#cccccc'
     },
     pdTitle: {

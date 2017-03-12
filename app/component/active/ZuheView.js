@@ -5,7 +5,7 @@
 import React, {Component} from 'react';
 import {Image, View} from 'react-native';
 
-import common from '../../util/common';
+import {createStyles} from '../../util/common';
 import model from '../../model/active/ZuheModel';
 
 export default class ZuheView extends Component {
@@ -40,7 +40,7 @@ export default class ZuheView extends Component {
     }
 }
 
-const styles = common.createStyles({
+const styles = createStyles({
     contain: {
         flexDirection: 'row',
         flex: 1,

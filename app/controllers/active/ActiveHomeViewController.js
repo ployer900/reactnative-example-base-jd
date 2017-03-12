@@ -12,19 +12,14 @@ import {
     TouchableHighlight
 } from 'react-native';
 
-import common from '../../util/common';
+import {createStyles, SCREEN_W, SCREEN_H} from '../../util/common';
 import {geth5BabelGenericChannel, getBabelProductPaged} from '../../network/index';
 
-/**
- * import view
- */
+//import babel model
 import BabelModViews from '../../component/active/index';
 
-/**
- * webview
- */
+//webview
 import WebViewController from '../../component/WebViewController';
-
 
 export default class ActiveHomeViewController extends Component {
 	//构造函数
@@ -143,25 +138,19 @@ export default class ActiveHomeViewController extends Component {
 }
 
 /**
- * 获取容器宽高
- * @type {[type]}
- */
-const containDimenson = common.getScreenDimension();
-
-/**
  * 定义样式
  * @type {[type]}
  */
-const styles = common.createStyles({
+const styles = createStyles({
     container: {
-        width: containDimenson.width,
-        height: containDimenson.height - 40,
+        width: SCREEN_W,
+        height: SCREEN_H - 40,
         backgroundColor: '#ffffff'
     },
 
     empty: {
         height: 0,
-		width: containDimenson.width,
+		width: SCREEN_W,
 		backgroundColor: '#ffffff'
     },
 

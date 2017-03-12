@@ -74,7 +74,8 @@ export default class SeckillCell extends Component {
 const styles = StyleSheet.create({
     container: {
         flexDirection: 'row',
-        padding: 10
+        padding: 10,
+        backgroundColor: '#fff'
     },
     icon: {
         width: 120,

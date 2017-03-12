@@ -9,7 +9,7 @@ import {
     View
 } from 'react-native';
 
-import common from '../../util/common';
+import {createStyles, SCREEN_W} from '../../util/common';
 import model from '../../model/active/JiangeModel';
 
 export default class JiangeView extends Component {
@@ -25,8 +25,8 @@ export default class JiangeView extends Component {
     }
 }
 
-const styles = common.createStyles({
+const styles = createStyles({
     w: {
-        width: common.getScreenDimension().width
+        width: SCREEN_W
     }
 });

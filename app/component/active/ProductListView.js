@@ -13,7 +13,7 @@ import {
     TouchableHighlight
 } from 'react-native';
 
-import common from '../../util/common';
+import {createStyles} from '../../util/common';
 
 export default class ProuctListView extends Component {
     constructor(props) {
@@ -49,8 +49,7 @@ export default class ProuctListView extends Component {
  * 相关样式
  * @type {[type]}
  */
-const containDimenson = common.getScreenDimension();
-const styles = common.createStyles({
+const styles = createStyles({
     pdWrap: {
         flexDirection: 'row',
         flex: 1,

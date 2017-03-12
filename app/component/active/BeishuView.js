@@ -5,7 +5,7 @@
 import React, {Component} from 'react';
 import {View, Image} from 'react-native';
 
-import common from '../../util/common';
+import {createStyles} from '../../util/common';
 import model from '../../model/active/BeishuModel';
 
 export default class BeishuView extends Component {
@@ -34,7 +34,7 @@ export default class BeishuView extends Component {
     }
 }
 
-const styles = common.createStyles({
+const styles = createStyles({
     wrap: {
         flexDirection: 'row',
         flex: 1,

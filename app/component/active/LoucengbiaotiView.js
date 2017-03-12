@@ -6,7 +6,7 @@
 import React, {Component} from 'react';
 import {Image, View} from 'react-native';
 
-import common from '../../util/common';
+import {createStyles, SCREEN_W} from '../../util/common';
 import model from '../../model/active/LoucengbiaotiModel';
 
 export default class LoucengbiaotiView extends Component {
@@ -27,9 +27,9 @@ export default class LoucengbiaotiView extends Component {
     }
 }
 
-const styles = common.createStyles({
+const styles = createStyles({
     pic: {
-        width: common.getScreenDimension().width,
+        width: SCREEN_W,
         height: 30
     }
 });

@@ -8,7 +8,8 @@ import {NavigatorIOS, Text} from 'react-native';
 /**
  * 作者页模块
  */
-import DiscoverAuthorViewController from '../../controllers/find/DiscoverAuthorViewController';
+// import DiscoverAuthorViewController from '../../controllers/find/DiscoverAuthorViewController';
+import DiscoverAuthorViewControllerContainer from '../../containers/DiscoverAuthorViewControllerContainer';
 
 export default class NavigatorViewController extends Component {
 
@@ -16,7 +17,7 @@ export default class NavigatorViewController extends Component {
         super(props);
     }
 
-    
+
     render() {
         return (
 
@@ -24,7 +25,7 @@ export default class NavigatorViewController extends Component {
                 translucent={false}
                 shadowHidden={true}
                 initialRoute={{
-                    component: DiscoverAuthorViewController,
+                    component: DiscoverAuthorViewControllerContainer,
                     title: '发现'
                 }}
 

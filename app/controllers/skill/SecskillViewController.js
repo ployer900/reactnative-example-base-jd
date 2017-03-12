@@ -2,6 +2,7 @@
  * jd秒杀模块
  * 目前只支持单张列表
  */
+'use strict';
 
 import React, { Component } from 'react';
 import {
@@ -11,80 +12,43 @@ import {
     ListView,
     View,
     TabBarIOS,
-    NavigatorIOS
+    NavigatorIOS,
+    Image,
+    Dimensions
 } from 'react-native';
 
 //引入单元格组件
 import SeckillCell from '../../component/cell/SeckillCell';
-//引入网络组件
-import {getSecskillProductGroup} from '../../network/index';
-
+//refresh
+import RefreshInfiniteListview from '@remobile/react-native-refresh-infinite-listview';
+//enhancer
+import JDBaseListViewController from '../JDBaseListViewController';
 
 /**
  * 定义数据源显示框架
- * @type {ListView}
  */
 const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 != r2});
 
-export default class SecskillViewController extends Component {
-    /**
-     * 构造函数
-     * @param  {[type]} props [description]
-     * @return {[type]}       [description]
-     */
-    constructor(props) {
-        super(props);
-        this.state = {
-            dataSource: ds.cloneWithRows([])
-        };
-    }
+export default class SecskillViewController extends JDBaseListViewController {
 
-    /**
-     * 数据请求应当放在当前
-     * 生命周期函数中执行
-     */
     componentDidMount() {
         //请求数据
-        this.fetchData();
+        this.props.fetchSeckillData();
     }
 
-    /**
-     * 渲染row间的分隔线
-     * @type {[type]}
-     */
-    renderSeparator(sectionID: number, rowID: number, adjacentRowHighlighted: bool){
-      return (
-        <View
-          key={`${sectionID}-${rowID}`}
-          style={styles.line}>
-        </View>
-      );
+    loadInitialData() {
+        this.props.fetchSeckillData();
     }
 
-    /**
-     * 更新数据源
-     */
-    updateDataSouce(data) {
-        this.setState({
-          dataSource: ds.cloneWithRows(data.seckillInfo.itemList)
-        });
+    loadMoreData() {
+        this.props.fetchSeckillData();
     }
 
-    /**
-     * 获取数据
-     */
-    fetchData() {
-        getSecskillProductGroup(43, 1424151).then((data) => {this.updateDataSouce(data);});
-    }
-
-    /**
-     * 渲染组件
-     */
-    render() {
+    renderRefreshInfiniteListview() {
         return (
-          <View style={{paddingTop: 42, flex: 1}}>
-            <ListView
-              dataSource={this.state.dataSource}
+            <RefreshInfiniteListview
+              ref = {(list) => {this.list = list}}
+              dataSource={ds.cloneWithRows(this.props.items ? this.props.items : [])}
               renderRow={(rowData) =>
                   <SeckillCell
                       soldRate={rowData.soldRate}
@@ -95,16 +59,28 @@ export default class SecskillViewController extends Component {
                   ></SeckillCell>
               }
               renderSeparator={this.renderSeparator}
+              scrollEventThrottle = {20}
               enableEmptySections={true}
+              onRefresh = {this.onRefresh.bind(this)}
+              onInfinite = {this.onInfinite.bind(this)}
+              style = {{backgroundColor: 'transparent'}}
+              pullDistance = {20}
+              footerHeight = {40}
+              renderEmptyRow = {this.renderEmptyRow}
+              renderHeaderRefreshIdle = {this.renderHeaderRefreshIdle}
+              renderHeaderWillRefresh = {this.renderHeaderWillRefresh}
+              renderHeaderRefreshing = {this.renderHeaderRefreshing}
+              renderFooterWillInifite = {this.renderFooterWillInifite}
+              renderFooterInifiting = {this.renderFooterInifiting}
+              renderFooterInifiteLoadedAll = {this.renderFooterInifiteLoadedAll}
             />
-          </View>
         );
     }
 }
 
 const styles = StyleSheet.create({
-  line: {
-    height: 0.5,
-    backgroundColor: '#cccccc'
-  }
+    line: {
+        height: 0.5,
+        backgroundColor: '#cccccc'
+    }
 });

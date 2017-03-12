@@ -9,7 +9,7 @@ import {
     WebView
 } from 'react-native';
 
-import common from '../util/common';
+import {createStyles, SCREEN_W, SCREEN_H} from '../util/common';
 
 export default class WebViewController extends Component {
     constructor(props) {
@@ -35,10 +35,10 @@ export default class WebViewController extends Component {
  * 相关样式
  * @type {[type]}
  */
-const styles = common.createStyles({
+const styles = createStyles({
     webView: {
-        width: common.getScreenDimension().width,
-        height: common.getScreenDimension().height,
+        width: SCREEN_W,
+        height: SCREEN_H,
         backgroundColor: '#ffffff'
     }
 });

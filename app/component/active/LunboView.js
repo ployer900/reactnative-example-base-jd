@@ -11,7 +11,7 @@ import {
     TouchableHighlight
 } from 'react-native';
 
-import common from '../../util/common';
+import {createStyles,SCREEN_W} from '../../util/common';
 import model from '../../model/active/LunboModel';
 
 export default class LunboView extends Component {
@@ -56,7 +56,7 @@ export default class LunboView extends Component {
      * @return {[type]}          [description]
      */
     scrollToPage(page, animated) {
-        this.scrollView.scrollTo({x: common.getScreenDimension().width * page, y: 0, animated: animated});
+        this.scrollView.scrollTo({x: SCREEN_W * page, y: 0, animated: animated});
     }
 
     /**
@@ -66,11 +66,6 @@ export default class LunboView extends Component {
     clearTimer() {
         clearInterval(this.timer);
     }
-
-	//获取宽度
-	getWidth() {
-		return common.getScreenDimension().width;
-	}
 
     /**
      * 点击轮播图
@@ -93,7 +88,7 @@ export default class LunboView extends Component {
 		var style;
 
 		position.width = this.props.indicatorSpace * len;
-		position.left = (this.getWidth() - len * this.props.indicatorSpace) / 2;
+		position.left = (SCREEN_W - len * this.props.indicatorSpace) / 2;
 
         if (this.props.indicatorPosition == 'bottom') {
             position.bottom = 0;
@@ -168,8 +163,9 @@ export default class LunboView extends Component {
                     pagingEnabled={true}
                     ref={(scrollView) => {this.scrollView = scrollView}}
                     onScroll={(e) => {
+                        //nativeEvent参照OC版
                         let offsetX = e.nativeEvent.contentOffset.x;
-                        let idx = offsetX / this.getWidth();
+                        let idx = offsetX / SCREEN_W;
 
                         this.clearTimer();
                         this.updataActivePage(idx);
@@ -210,17 +206,17 @@ LunboView.defaultProps = {
 /**
  * 相关样式
  */
-const styles = common.createStyles({
+const styles = createStyles({
     contain: {
-        width: common.getScreenDimension().width,
+        width: SCREEN_W,
         height: 140
     },
     slideWrap: {
-        width: common.getScreenDimension().width,
+        width: SCREEN_W,
         height: 140
     },
     slideItem: {
-        width: common.getScreenDimension().width,
+        width: SCREEN_W,
         height: 140,
         backgroundColor: '#cccccc'
     },

@@ -13,7 +13,7 @@ import {
     TouchableHighlight
 } from 'react-native';
 
-import common from '../../util/common';
+import {createStyles, SCREEN_W} from '../../util/common';
 import ProductSlideView from './ProductSlideView';
 import ProductListView from './ProductListView';
 import model from '../../model/active/NormalProductModel';
@@ -25,7 +25,7 @@ export default class NormalProductView extends Component {
 
     /**
      * 渲染输出商品组
-     * 更加styleId，切换相应的样式
+     * 根据styleId，切换相应的样式
      * 目前处理方式，通过styleId来分流
      * 渲染操作达到目的；并不是切换样式来实现
      * 在后续过程中，看看能否单使用样式控制
@@ -91,10 +91,9 @@ export default class NormalProductView extends Component {
  * 相关样式
  * @type {[type]}
  */
-const containDimenson = common.getScreenDimension();
-const styles = common.createStyles({
+const styles = createStyles({
     pdContainer: {
-        height: containDimenson.width / 4 + 55,
+        height: SCREEN_W / 4 + 55,
         backgroundColor: '#dddddd',
         padding: 2
     }

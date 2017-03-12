@@ -12,7 +12,7 @@ import {
 /**
  * 引入工具
  */
-import common from '../../util/common';
+import {SCREEN_W, createStyles} from '../../util/common';
 
 /**
  * 引入模型
@@ -50,9 +50,9 @@ export default class TonglanView extends Component {
  * 创建样式
  * @type {[type]}
  */
-const styles = common.createStyles({
+const styles = createStyles({
     img: {
-        width: common.getScreenDimension().width,
+        width: SCREEN_W,
         height: 20,
         backgroundColor: '#cccccc'
     }

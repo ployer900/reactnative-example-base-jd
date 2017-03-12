@@ -5,7 +5,7 @@
 import React, {Component} from 'react';
 import {View, Image, Text, TouchableHighlight} from 'react-native';
 
-import common from '../../util/common';
+import {SCREEN_W, createStyles} from '../../util/common';
 import model from '../../model/active/QuickEntryModel';
 
 export default class QuickEntryView extends Component {
@@ -52,7 +52,7 @@ export default class QuickEntryView extends Component {
     }
 }
 
-const styles = common.createStyles({
+const styles = createStyles({
     entryWrap: {
         flex: 1,
         flexDirection: 'row',
@@ -66,7 +66,7 @@ const styles = common.createStyles({
         flex: 1,
         flexDirection: 'column',
         height: 70,
-        width: common.getScreenDimension().width / 5,
+        width: SCREEN_W / 5,
         justifyContent: 'center',
         alignItems: 'center'
     },
