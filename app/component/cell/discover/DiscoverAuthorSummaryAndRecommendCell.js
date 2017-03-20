@@ -1,3 +1,15 @@
+/**
+ * @Author: hongliang yu <yuhongliang>
+ * @Date:   11-Mar-2017
+ * @Email:  yuhongliang900@163.com
+ * @Filename: DiscoverAuthorSummaryAndRecommendCell.js
+ * @Last modified by:   yuhongliang
+ * @Last modified time: 20-Mar-2017
+ * @License: MIT
+ * @Copyright: All reserved by yuhongliang<yuhongliang900@163.com>
+ */
+
+
 import React, {Component} from 'react';
 import {
     Image,
@@ -27,6 +39,7 @@ export default class DiscoverAuthorSummaryAndRecommendCell extends Component {
                     recommendTheme = {rowData.recommendTheme}
                     recommendReason = {rowData.recommendReason}
                     likeNum = {rowData.likeNum}
+                    tapItem = {this.props.tapItem}
                 />
             );
         } else if (releaseType == 3) {

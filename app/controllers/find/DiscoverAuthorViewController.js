@@ -1,4 +1,16 @@
 /**
+ * @Author: hongliang yu <yuhongliang>
+ * @Date:   17-Sep-2016
+ * @Email:  yuhongliang900@163.com
+ * @Filename: DiscoverAuthorViewController.js
+ * @Last modified by:   yuhongliang
+ * @Last modified time: 20-Mar-2017
+ * @License: MIT
+ * @Copyright: All reserved by yuhongliang<yuhongliang900@163.com>
+ */
+
+
+/**
  *
  *
  * 发现栏目，作者页
@@ -29,7 +41,7 @@ import JDBaseListViewController from '../JDBaseListViewController';
 /**
  * 发现清单页
  */
-import DiscoverListViewController from './DiscoverListViewController';
+import DiscoverListViewControllerContainer from '../../containers/DiscoverListViewControllerContainer';
 
 /**
  * 定义数据源显示层
@@ -45,7 +57,7 @@ export default class DiscoverAuthorViewController extends JDBaseListViewControll
      * 触发请求
      */
     componentDidMount() {
-        this.props.fetchAuthorReleaseData();
+        this.loadInitialData();
     }
 
     loadInitialData() {
@@ -64,7 +76,7 @@ export default class DiscoverAuthorViewController extends JDBaseListViewControll
         //上后，拿到navigator属性，指向navigatorController
         this.props.navigator.push({
             //目的ViewController
-            component: DiscoverListViewController,
+            component: DiscoverListViewControllerContainer,
 
             //目的ViewController导航栏显示名称
             title: '发现清单',

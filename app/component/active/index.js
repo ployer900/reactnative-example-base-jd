@@ -1,4 +1,16 @@
 /**
+ * @Author: hongliang yu <yuhongliang>
+ * @Date:   14-Nov-2016
+ * @Email:  yuhongliang900@163.com
+ * @Filename: index.js
+ * @Last modified by:   yuhongliang
+ * @Last modified time: 20-Mar-2017
+ * @License: MIT
+ * @Copyright: All reserved by yuhongliang<yuhongliang900@163.com>
+ */
+
+
+/**
  *
  * 视图组件集合
  *

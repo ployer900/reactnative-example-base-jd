@@ -1,10 +1,17 @@
 /**
- * viewcontroller enhancer
- *
- * @decorator
+ * @Author: hongliang yu <yuhongliang>
+ * @Date:   12-Mar-2017
+ * @Email:  yuhongliang900@163.com
+ * @Filename: JDBaseListViewController.js
+ * @Last modified by:   yuhongliang
+ * @Last modified time: 20-Mar-2017
+ * @License: MIT
+ * @Copyright: All reserved by yuhongliang<yuhongliang900@163.com>
  */
 
 
+/////////// base view controller //////////////
+///
 import React, {Component} from 'react';
 import {
     View,
@@ -152,8 +159,7 @@ const styles = StyleSheet.create({
     container: {
         paddingTop: 0,
         flex: 1,
-        backgroundColor: '#eee',
-        paddingBottom: 60
+        backgroundColor: '#eee'
     },
     spinner: {
         position: 'absolute',

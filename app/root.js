@@ -1,13 +1,21 @@
+/**
+ * @Author: hongliang yu <yuhongliang>
+ * @Date:   08-Mar-2017
+ * @Email:  yuhongliang900@163.com
+ * @Filename: root.js
+ * @Last modified by:   yuhongliang
+ * @Last modified time: 20-Mar-2017
+ * @License: MIT
+ * @Copyright: All reserved by yuhongliang<yuhongliang900@163.com>
+ */
+
 import React, {Component} from 'react';
 import {AppRegistry} from 'react-native';
-import {createStore, applyMiddleware} from 'redux';
 import {Provider} from 'react-redux';
-import thunk from 'redux-thunk';
-
 import App from './containers/App';
-import rootReducer from './reducers/index';
+import configureStore from './store/configureStore';
 
-const store = createStore(rootReducer, applyMiddleware(thunk));
+const store = configureStore();
 
 export default class Root extends Component {
     constructor() {

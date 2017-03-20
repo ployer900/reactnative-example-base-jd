@@ -1,3 +1,15 @@
+/**
+ * @Author: hongliang yu <yuhongliang>
+ * @Date:   11-Mar-2017
+ * @Email:  yuhongliang900@163.com
+ * @Filename: DiscoverAuthorRecommendCell.js
+ * @Last modified by:   yuhongliang
+ * @Last modified time: 20-Mar-2017
+ * @License: MIT
+ * @Copyright: All reserved by yuhongliang<yuhongliang900@163.com>
+ */
+
+
 import React, {Component} from 'react';
 import {
     Image,
@@ -7,7 +19,7 @@ import {
     TouchableHighlight,
     Dimensions
 } from 'react-native';
-
+import icon from 'react-native-iconic-font/fontawesome';
 
 export default class DiscoverAuthorRecommendCell extends Component {
     constructor(props) {

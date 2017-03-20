@@ -1,4 +1,16 @@
 /**
+ * @Author: hongliang yu <yuhongliang>
+ * @Date:   08-Nov-2016
+ * @Email:  yuhongliang900@163.com
+ * @Filename: QuickEntryView.js
+ * @Last modified by:   yuhongliang
+ * @Last modified time: 20-Mar-2017
+ * @License: MIT
+ * @Copyright: All reserved by yuhongliang<yuhongliang900@163.com>
+ */
+
+
+/**
  * 快速导航
  */
 
@@ -60,7 +72,8 @@ const styles = createStyles({
         justifyContent: 'center',
         alignItems: 'center',
         marginTop: 4,
-        marginBottom: 4
+        marginBottom: 4,
+        backgroundColor: '#fff'
     },
     entryItem: {
         flex: 1,
@@ -76,10 +89,9 @@ const styles = createStyles({
         paddingLeft: 10
     },
     entryTitle: {
-        paddingTop: 4,
-        paddingBottom: 4,
+        paddingTop: 8,
         fontSize: 12,
-        color: '#333333',
+        color: '#666',
         textAlign: 'center'
     }
 

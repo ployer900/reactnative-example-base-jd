@@ -1,11 +1,22 @@
 /**
- * seckill container
+ * @Author: hongliang yu <yuhongliang>
+ * @Date:   08-Mar-2017
+ * @Email:  yuhongliang900@163.com
+ * @Filename: SeckillViewControllerContainer.js
+ * @Last modified by:   yuhongliang
+ * @Last modified time: 20-Mar-2017
+ * @License: MIT
+ * @Copyright: All reserved by yuhongliang<yuhongliang900@163.com>
  */
 
 
-import {connect} from 'react-redux';
+/**
+ * seckill container
+ */
+import { connect } from 'react-redux';
+import { put } from 'redux-saga/effects';
 import SecskillViewController from '../controllers/skill/SecskillViewController';
-import {fetchData} from '../actions/SeckillRelatedAction';
+import { fetchSeckillData, FETCH_SECKILL_DATA } from '../actions/SeckillRelatedActions';
 
 const mapStateToProps = (state, ownProps) => {
     return {
@@ -17,7 +28,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
         fetchSeckillData: () => {
-            dispatch(fetchData(43, 1424151));
+            dispatch (fetchSeckillData(43, 1424151));
         }
     }
 }

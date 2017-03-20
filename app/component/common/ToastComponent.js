@@ -1,4 +1,16 @@
 /**
+ * @Author: hongliang yu <yuhongliang>
+ * @Date:   08-Mar-2017
+ * @Email:  yuhongliang900@163.com
+ * @Filename: ToastComponent.js
+ * @Last modified by:   yuhongliang
+ * @Last modified time: 20-Mar-2017
+ * @License: MIT
+ * @Copyright: All reserved by yuhongliang<yuhongliang900@163.com>
+ */
+
+
+/**
  * toast
  */
 

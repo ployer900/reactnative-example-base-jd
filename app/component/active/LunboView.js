@@ -1,4 +1,16 @@
 /**
+ * @Author: hongliang yu <yuhongliang>
+ * @Date:   25-Dec-2016
+ * @Email:  yuhongliang900@163.com
+ * @Filename: LunboView.js
+ * @Last modified by:   yuhongliang
+ * @Last modified time: 20-Mar-2017
+ * @License: MIT
+ * @Copyright: All reserved by yuhongliang<yuhongliang900@163.com>
+ */
+
+
+/**
  * 广告轮播
  */
 
@@ -162,6 +174,7 @@ export default class LunboView extends Component {
                     bounces={false}
                     pagingEnabled={true}
                     ref={(scrollView) => {this.scrollView = scrollView}}
+                    scrollEventThrottle = {20}
                     onScroll={(e) => {
                         //nativeEvent参照OC版
                         let offsetX = e.nativeEvent.contentOffset.x;

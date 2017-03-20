@@ -1,4 +1,16 @@
 /**
+ * @Author: hongliang yu <yuhongliang>
+ * @Date:   17-Nov-2016
+ * @Email:  yuhongliang900@163.com
+ * @Filename: SeckillCell.js
+ * @Last modified by:   yuhongliang
+ * @Last modified time: 20-Mar-2017
+ * @License: MIT
+ * @Copyright: All reserved by yuhongliang<yuhongliang900@163.com>
+ */
+
+
+/**
  *
  *  TableViewCell
  *
@@ -20,8 +32,6 @@ export default class SeckillCell extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            title: '美国金可儿(kingkoil)乳胶床垫婚床用 双人席梦思弹簧床垫软硬适中 加厚版 碧玺 高端定制 1800*2000*310',
-            subTitle: '加厚版 碧玺 高端定制 1800*2000*310',
             soldRate: new Animated.Value(0)
         };
     }
@@ -29,15 +39,12 @@ export default class SeckillCell extends Component {
     componentDidMount() {
         Animated.timing(this.state.soldRate, {
             toValue: this.props.soldRate,
-            duration: 250,
+            duration: 350,
             easing: Easing.linear
         }).start();
     }
 
-    _onPressButton() {
-        this.setState({
-            title: '美国金可儿(kingkoil)乳胶床垫婚床用 双人席梦思弹簧床垫软硬适中 加厚版 碧玺 高端定制 1800*2000*310'
-        });
+    onPressButton() {
     }
 
     render() {
@@ -51,10 +58,9 @@ export default class SeckillCell extends Component {
 
                 <View style={styles.right}>
                     <Text style={styles.title} numberOfLines={2}>{this.props.title}</Text>
-                    <Text style={styles.subTitle}>{this.state.subTitle}</Text>
                     <Text style={styles.price}>￥{this.props.price}</Text>
                     <Text style={styles.oriPrice}>￥{this.props.oriPrice}</Text>
-                    <TouchableHighlight style={styles.hightlight} onPress={() => this._onPressButton()}>
+                    <TouchableHighlight style={styles.hightlight} onPress={() => this.onPressButton()}>
                         <Text style={styles.button}>立即抢购</Text>
                     </TouchableHighlight>
                     <View style={styles.rateWrap}>
@@ -78,8 +84,8 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff'
     },
     icon: {
-        width: 120,
-        height: 120
+        width: 100,
+        height: 100
     },
     right: {
         flex: 1,
@@ -88,10 +94,7 @@ const styles = StyleSheet.create({
     title: {
         fontSize: 14,
         fontWeight: '600',
-    },
-    subTitle: {
-        fontSize: 12,
-        marginTop: 4,
+        lineHeight: 20
     },
     price: {
         fontSize: 16,
@@ -108,16 +111,18 @@ const styles = StyleSheet.create({
         position: 'absolute',
         right: 0,
         bottom: 8,
-        borderRadius: 4
+        borderRadius: 2,
+        borderStyle: 'solid',
+        borderWidth: 1,
+        borderColor: '#ff334d'
     },
     button: {
         height: 30,
         fontSize: 12,
-        paddingLeft: 15,
-        paddingRight: 15,
+        paddingLeft: 12,
+        paddingRight: 12,
         color: '#ffffff',
         textAlign: 'center',
-        borderRadius: 4,
         lineHeight: 30,
         backgroundColor: '#ff334d'
     },

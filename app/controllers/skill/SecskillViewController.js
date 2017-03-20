@@ -1,4 +1,16 @@
 /**
+ * @Author: hongliang yu <yuhongliang>
+ * @Date:   28-Nov-2016
+ * @Email:  yuhongliang900@163.com
+ * @Filename: SecskillViewController.js
+ * @Last modified by:   yuhongliang
+ * @Last modified time: 20-Mar-2017
+ * @License: MIT
+ * @Copyright: All reserved by yuhongliang<yuhongliang900@163.com>
+ */
+
+
+/**
  * jd秒杀模块
  * 目前只支持单张列表
  */
@@ -30,10 +42,9 @@ import JDBaseListViewController from '../JDBaseListViewController';
 const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 != r2});
 
 export default class SecskillViewController extends JDBaseListViewController {
-
     componentDidMount() {
         //请求数据
-        this.props.fetchSeckillData();
+        this.loadInitialData();
     }
 
     loadInitialData() {
@@ -77,10 +88,3 @@ export default class SecskillViewController extends JDBaseListViewController {
         );
     }
 }
-
-const styles = StyleSheet.create({
-    line: {
-        height: 0.5,
-        backgroundColor: '#cccccc'
-    }
-});

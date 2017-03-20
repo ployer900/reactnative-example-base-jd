@@ -4,9 +4,9 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "iphone6": "react-native run-ios",
-    "iphone5": "react-native run-ios --simulator=\"iPhone 5\"",
-    "iphone4": "react-native run-ios --simulator=\"iPhone 4s\"",
+    "i6": "react-native run-ios",
+    "i5": "react-native run-ios --simulator=\"iPhone 5\"",
+    "i4": "react-native run-ios --simulator=\"iPhone 4s\"",
     "bundle": "react-native bundle --entry-file index.ios.js --bundle-output ./ios/bundle/index.ios.jsbundle --platform ios --assets-dest ./ios/bundle --dev false",
     "test": "jest"
   },
@@ -14,9 +14,12 @@
     "@remobile/react-native-refresh-infinite-listview": "^1.0.6",
     "react": "15.4.1",
     "react-native": "0.39.2",
+    "react-native-iconic-font": "0.0.6",
+    "react-native-icons": "^0.7.1",
     "react-native-spinkit": "^0.1.5",
     "react-redux": "^5.0.3",
     "redux": "^3.6.0",
+    "redux-saga": "^0.14.3",
     "redux-thunk": "^2.2.0"
   },
   "devDependencies": {

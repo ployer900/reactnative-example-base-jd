@@ -1,3 +1,15 @@
+/**
+ * @Author: hongliang yu <yuhongliang>
+ * @Date:   11-Mar-2017
+ * @Email:  yuhongliang900@163.com
+ * @Filename: DiscoverAuthorSummaryCell.js
+ * @Last modified by:   yuhongliang
+ * @Last modified time: 20-Mar-2017
+ * @License: MIT
+ * @Copyright: All reserved by yuhongliang<yuhongliang900@163.com>
+ */
+
+
 import React, {Component} from 'react';
 import {
     Image,

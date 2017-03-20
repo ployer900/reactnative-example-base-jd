@@ -1,4 +1,16 @@
 /**
+ * @Author: hongliang yu <yuhongliang>
+ * @Date:   07-Nov-2016
+ * @Email:  yuhongliang900@163.com
+ * @Filename: TonglanView.js
+ * @Last modified by:   yuhongliang
+ * @Last modified time: 20-Mar-2017
+ * @License: MIT
+ * @Copyright: All reserved by yuhongliang<yuhongliang900@163.com>
+ */
+
+
+/**
  * 通栏广告
  */
 
@@ -34,7 +46,8 @@ export default class TonglanView extends Component {
         //模板数据
         let modelData = model.parseData(this.props.data);
 
-        //返回结构
+        if (modelData.imgUrl == 'http:') return null
+
         return (
             <View>
                 <Image

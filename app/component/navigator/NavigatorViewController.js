@@ -1,4 +1,16 @@
 /**
+ * @Author: hongliang yu <yuhongliang>
+ * @Date:   03-Nov-2016
+ * @Email:  yuhongliang900@163.com
+ * @Filename: NavigatorViewController.js
+ * @Last modified by:   yuhongliang
+ * @Last modified time: 20-Mar-2017
+ * @License: MIT
+ * @Copyright: All reserved by yuhongliang<yuhongliang900@163.com>
+ */
+
+
+/**
  * 导航器
  */
 
@@ -8,7 +20,6 @@ import {NavigatorIOS, Text} from 'react-native';
 /**
  * 作者页模块
  */
-// import DiscoverAuthorViewController from '../../controllers/find/DiscoverAuthorViewController';
 import DiscoverAuthorViewControllerContainer from '../../containers/DiscoverAuthorViewControllerContainer';
 
 export default class NavigatorViewController extends Component {

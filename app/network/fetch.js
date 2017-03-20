@@ -1,4 +1,16 @@
 /**
+ * @Author: hongliang yu <yuhongliang>
+ * @Date:   04-Nov-2016
+ * @Email:  yuhongliang900@163.com
+ * @Filename: fetch.js
+ * @Last modified by:   yuhongliang
+ * @Last modified time: 20-Mar-2017
+ * @License: MIT
+ * @Copyright: All reserved by yuhongliang<yuhongliang900@163.com>
+ */
+
+
+/**
  *
  * 请求类
  *
@@ -83,8 +95,8 @@ Request.getJSON = function(url, params, opts) {
         }
     }, opts);
 
-    console.log(url);
-    
+    // console.log(url);
+
     return fetch(url, options).then(checkStatus).then(parseJSON);
 };
 
