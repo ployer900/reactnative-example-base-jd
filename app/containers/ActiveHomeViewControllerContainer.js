@@ -14,11 +14,12 @@
 import { connect } from 'react-redux';
 import ActiveHomeViewController from '../controllers/active/ActiveHomeViewController';
 import { fetchActiveData } from '../actions/ActiveRelatedActions';
+import { getFetchStatus, getActiveFloors } from '../selectors/activeSelector';
 
 const mapStateToProps = (state, ownProps) => {
     return {
-        floorList: state.ActiveStoreData.floorList,
-        isFetching: state.ActiveStoreData.isFetching
+        floorList: getActiveFloors(state),
+        isFetching: getFetchStatus(state)
     };
 }
 

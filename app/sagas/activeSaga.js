@@ -21,8 +21,12 @@ import { FETCH_ACTIVE_DATA } from '../actions/actionTypes';
 
 function* fetchActiveData(action) {
     const { activityId } = action;
-    const data = yield call (geth5BabelGenericChannel, activityId);
-    yield put( actions.fetchActiveDataSuccess(data.floorList) );
+    try {
+        const data = yield call (geth5BabelGenericChannel, activityId);
+        yield put( actions.fetchActiveDataSuccess(data.floorList) );
+    } catch(e) {
+        yield put( actions.fetchActiveDataFailure(e.message));
+    }
 }
 
 export default function* seckillSaga() {

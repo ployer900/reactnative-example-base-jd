@@ -17,11 +17,12 @@ import { connect } from 'react-redux';
 import { put } from 'redux-saga/effects';
 import SecskillViewController from '../controllers/skill/SecskillViewController';
 import { fetchSeckillData } from '../actions/SeckillRelatedActions';
+import { getFetchStatus, getSeckillItems } from '../selectors/seckillSelector';
 
 const mapStateToProps = (state, ownProps) => {
     return {
-        isFetching: state.SeckillStoreData.isFetching,
-        items: state.SeckillStoreData.items
+        isFetching: getFetchStatus(state),
+        items: getSeckillItems(state)
     }
 }
 

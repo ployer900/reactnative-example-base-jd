@@ -14,16 +14,16 @@
  * DiscoverAuthorViewController container
  */
 
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 //list
 import DiscoverListViewController from '../controllers/find/DiscoverListViewController';
-import {fetchListData} from '../actions/DiscoverRelatedActions';
-
+import { fetchListData } from '../actions/DiscoverRelatedActions';
+import { getListFetchStatus, getDiscoverListContent } from '../selectors/discoverSelector';
 
 const mapStateToProps = (state, ownProps) => {
     return {
-        content: state.DiscoverListStoreData.content,
-        isFetching: state.DiscoverListStoreData.isFetching
+        content: getDiscoverListContent(state),
+        isFetching: getListFetchStatus(state)
     }
 }
 

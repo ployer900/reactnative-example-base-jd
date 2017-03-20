@@ -14,16 +14,16 @@
 ///
 ///
 
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 //author
 import DiscoverAuthorViewController from '../controllers/find/DiscoverAuthorViewController';
-import {fetchAuthorData} from '../actions/DiscoverRelatedActions';
-
+import { fetchAuthorData } from '../actions/DiscoverRelatedActions';
+import { getAuthorFetchStatus, getDiscoverAuthorContent } from '../selectors/discoverSelector';
 
 const mapStateToProps = (state, ownProps) => {
     return {
-        content: state.DiscoverAuthorStoreData.content,
-        isFetching: state.DiscoverAuthorStoreData.isFetching
+        content: getDiscoverAuthorContent(state),
+        isFetching: getAuthorFetchStatus(state)
     }
 }
 

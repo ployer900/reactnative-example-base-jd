@@ -22,8 +22,12 @@ import { FETCH_SECKILL_DATA } from '../actions/actionTypes';
 //gid, wareId
 function* fetchSeckillData(action) {
     const { gid, wareId } = action;
-    const data = yield call (getSecskillProductGroup, gid, wareId);
-    yield put( actions.fetchSeckillSuccess(data.seckillInfo.itemList) );
+    try {
+        const data = yield call (getSecskillProductGroup, gid, wareId);
+        yield put( actions.fetchSeckillSuccess(data.seckillInfo.itemList) );
+    } catch(e) {
+        yield put( actions.fetchSeckillFailure(e.message));
+    }
 }
 
 export default function* seckillSaga() {

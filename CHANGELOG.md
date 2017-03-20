@@ -15,6 +15,7 @@
 #### [2017.03.08]
 1. 混入redux， 目前完成秒杀部分
 2. 加入indicator, 需要在项目根目录下执行react-native link命令, 将库添加为ios和android的依赖项
+3. 混入redux-thunk中间件，控制异步action
 
 #### [2017.03.12]
 1. 迭代更新发现作者页，活动页面，发现清单页，混入redux
@@ -37,3 +38,4 @@
 1. 接入redux-saga中间件，移除redux-thunk中间件，使用es6特性
 2. 代码文件，添加作者信息
 3. 剥离action type至单独文件，方便管理
+4. 接入reselect，避免不必要的状态更新导致的重绘，购物车场景很需要

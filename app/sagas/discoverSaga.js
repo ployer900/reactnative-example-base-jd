@@ -23,8 +23,12 @@ import { FETCH_AUTHOR_DATA, FETCH_LIST_DATA } from '../actions/actionTypes';
 
 function* fetchDiscoverAuthorData(action) {
     const { authorId, page, pageSize, offset, category } = action;
-    const data = yield call(getAuthorReleaseGroup, authorId, page, pageSize, offset, category);
-    yield put( actions.fetchAuthorSuccess(data.page.content) );
+    try {
+        const data = yield call(getAuthorReleaseGroup, authorId, page, pageSize, offset, category);
+        yield put( actions.fetchAuthorSuccess(data.page.content) );
+    } catch(e) {
+        yield put( actions.fetchAuthorFailure(e.message));
+    }
 }
 
 ////////////////// list segment ////////////////////
