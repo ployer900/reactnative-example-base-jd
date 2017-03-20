@@ -17,7 +17,7 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
 import { getAuthorReleaseGroup, getDiscoverInvetGroup } from '../network/index';
 import * as actions from '../actions/DiscoverRelatedActions';
-
+import { FETCH_AUTHOR_DATA, FETCH_LIST_DATA } from '../actions/actionTypes';
 
 ////////////////// author segment ///////////////
 
@@ -39,6 +39,6 @@ function* fetchDiscoverListData(action) {
 ///////////////// combine segment //////////////////////
 ///
 export default function* discoverSaga() {
-    yield takeLatest(actions.FETCH_AUTHOR_DATA, fetchDiscoverAuthorData);
-    yield takeLatest(actions.FETCH_LIST_DATA, fetchDiscoverListData);
+    yield takeLatest(FETCH_AUTHOR_DATA, fetchDiscoverAuthorData);
+    yield takeLatest(FETCH_LIST_DATA, fetchDiscoverListData);
 }

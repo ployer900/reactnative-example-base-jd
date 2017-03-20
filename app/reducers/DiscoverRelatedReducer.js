@@ -18,8 +18,7 @@ import {
     FETCH_AUTHOR_DATA,
     FETCH_AUTHOR_DATA_SUCCESS,
     FETCH_AUTHOR_DATA_FAILURE
-} from '../actions/DiscoverRelatedActions';
-import {combineReducers} from 'redux';
+} from '../actions/actionTypes';
 
 const DiscoverAuthorStoreData = (state = {
     isFetching: false,

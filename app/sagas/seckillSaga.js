@@ -17,7 +17,7 @@
 import { call, put, takeLatest} from 'redux-saga/effects';
 import {getSecskillProductGroup} from '../network/index';
 import * as actions from '../actions/SeckillRelatedActions';
-
+import { FETCH_SECKILL_DATA } from '../actions/actionTypes';
 
 //gid, wareId
 function* fetchSeckillData(action) {
@@ -27,5 +27,5 @@ function* fetchSeckillData(action) {
 }
 
 export default function* seckillSaga() {
-    yield takeLatest(actions.FETCH_SECKILL_DATA, fetchSeckillData);
+    yield takeLatest(FETCH_SECKILL_DATA, fetchSeckillData);
 }

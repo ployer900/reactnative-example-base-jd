@@ -16,7 +16,7 @@
 import { connect } from 'react-redux';
 import { put } from 'redux-saga/effects';
 import SecskillViewController from '../controllers/skill/SecskillViewController';
-import { fetchSeckillData, FETCH_SECKILL_DATA } from '../actions/SeckillRelatedActions';
+import { fetchSeckillData } from '../actions/SeckillRelatedActions';
 
 const mapStateToProps = (state, ownProps) => {
     return {

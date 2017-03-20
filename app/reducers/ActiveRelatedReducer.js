@@ -18,8 +18,7 @@ import {
     FETCH_ACTIVE_DATA,
     FETCH_ACTIVE_DATA_SUCCESS,
     FETCH_ACTIVE_DATA_FAILURE
-} from '../actions/ActiveRelatedActions';
-import {combineReducers} from 'redux';
+} from '../actions/actionTypes';
 
 const ActiveStoreData = (state = {
     isFetching: false,

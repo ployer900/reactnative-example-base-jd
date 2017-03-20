@@ -10,18 +10,19 @@
  */
 
 
-/**
- * active actions
- */
+import {
+    FETCH_ACTIVE_DATA,
+    FETCH_ACTIVE_DATA_SUCCESS,
+    FETCH_ACTIVE_DATA_FAILURE
+} from './actionTypes';
 
-import {geth5BabelGenericChannel} from '../network/index';
+export const fetchActiveData = (activityId) => {
+    return {
+        type: FETCH_ACTIVE_DATA,
+        activityId
+    }
+}
 
-export const FETCH_ACTIVE_DATA = 'fetch active data';
-export const FETCH_ACTIVE_DATA_SUCCESS = 'fetch active data success';
-export const FETCH_ACTIVE_DATA_FAILURE = 'fetch active data failure';
-
-//sync action
-//
 export const fetchActiveDataSuccess = (floorList) => {
     return {
         type: FETCH_ACTIVE_DATA_SUCCESS,
@@ -35,23 +36,3 @@ export const fetchActiveDataFailure = (action) => {
         action
     };
 }
-
-export const fetchActiveData = (activityId) => {
-    return {
-        type: FETCH_ACTIVE_DATA,
-        activityId
-    }
-}
-
-//asyn action
-// export const fetchActiveData = (activityId) => (dispatch) => {
-//     dispatch(fetchingActiveData(true));
-//     geth5BabelGenericChannel(activityId).then((data) => {
-//         if (data.code == 0 && data.subCode == 0) {
-//             dispatch(fetchActiveDataSuccess(data.floorList));
-//         } else {
-//             dispatch(fetchActiveDataFailure(true));
-//         }
-//         dispatch(fetchingActiveData(false));
-//     });
-// }

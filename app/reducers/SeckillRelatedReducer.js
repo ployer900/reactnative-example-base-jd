@@ -18,8 +18,7 @@ import {
     FETCH_SECKILL_DATA,
     FETCH_SECKILL_DATA_SUCCESS,
     FETCH_SECKILL_DATA_FAILURE
-} from '../actions/SeckillRelatedActions';
-import {combineReducers} from 'redux';
+} from '../actions/actionTypes';
 
 const SeckillStoreData = (state = {
     isFetching: false,

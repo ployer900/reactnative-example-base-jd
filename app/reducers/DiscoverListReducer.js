@@ -10,15 +10,11 @@
  */
 
 
-/**
- * DiscoverRelated reducer
- */
 import {
     FETCH_LIST_DATA,
     FETCH_LIST_DATA_SUCCESS,
     FETCH_LIST_DATA_FAILURE
-} from '../actions/DiscoverRelatedActions';
-import {combineReducers} from 'redux';
+} from '../actions/actionTypes';
 
 const DiscoverListStoreData = (state = {
     isFetching: false,

@@ -17,6 +17,7 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
 import { geth5BabelGenericChannel } from '../network/index';
 import * as actions from '../actions/ActiveRelatedActions';
+import { FETCH_ACTIVE_DATA } from '../actions/actionTypes';
 
 function* fetchActiveData(action) {
     const { activityId } = action;
@@ -25,5 +26,5 @@ function* fetchActiveData(action) {
 }
 
 export default function* seckillSaga() {
-    yield takeLatest(actions.FETCH_ACTIVE_DATA, fetchActiveData);
+    yield takeLatest(FETCH_ACTIVE_DATA, fetchActiveData);
 }
