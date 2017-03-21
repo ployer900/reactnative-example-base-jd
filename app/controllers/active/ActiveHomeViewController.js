@@ -4,7 +4,7 @@
  * @Email:  yuhongliang900@163.com
  * @Filename: ActiveHomeViewController.js
  * @Last modified by:   yuhongliang
- * @Last modified time: 20-Mar-2017
+ * @Last modified time: 21-Mar-2017
  * @License: MIT
  * @Copyright: All reserved by yuhongliang<yuhongliang900@163.com>
  */
@@ -14,7 +14,7 @@
  * 活动模块相关页面入口
  */
 
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import {
     Image,
     View,
@@ -24,7 +24,7 @@ import {
     TouchableHighlight
 } from 'react-native';
 
-import {createStyles, SCREEN_W, SCREEN_H} from '../../util/common';
+import { createStyles, SCREEN_W, SCREEN_H } from '../../util/common';
 import JDBaseListViewController from '../JDBaseListViewController';
 import ActiveHomeCell from '../../component/active/ActiveHomeCell';
 //refresh
@@ -88,4 +88,8 @@ export default class ActiveHomeViewController extends JDBaseListViewController {
  * style
  */
 const styles = createStyles({
+    contentContainer: {
+        width: SCREEN_W,
+        height: SCREEN_H - 50,
+    }
 });

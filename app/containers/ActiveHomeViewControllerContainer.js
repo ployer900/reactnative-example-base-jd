@@ -4,7 +4,7 @@
  * @Email:  yuhongliang900@163.com
  * @Filename: ActiveHomeViewControllerContainer.js
  * @Last modified by:   yuhongliang
- * @Last modified time: 20-Mar-2017
+ * @Last modified time: 21-Mar-2017
  * @License: MIT
  * @Copyright: All reserved by yuhongliang<yuhongliang900@163.com>
  */
@@ -14,12 +14,13 @@
 import { connect } from 'react-redux';
 import ActiveHomeViewController from '../controllers/active/ActiveHomeViewController';
 import { fetchActiveData } from '../actions/ActiveRelatedActions';
-import { getFetchStatus, getActiveFloors } from '../selectors/activeSelector';
+import { getFetchStatusAndActiveFloors } from '../selectors/activeSelector';
 
 const mapStateToProps = (state, ownProps) => {
+    let data = getFetchStatusAndActiveFloors(state);
     return {
-        floorList: getActiveFloors(state),
-        isFetching: getFetchStatus(state)
+        floorList: data.floorList,
+        isFetching: data.isFetching
     };
 }
 

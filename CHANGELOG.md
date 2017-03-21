@@ -4,7 +4,7 @@
 @Email:  yuhongliang900@163.com
 @Filename: CHANGELOG.md
 @Last modified by:   yuhongliang
-@Last modified time: 20-Mar-2017
+@Last modified time: 21-Mar-2017
 @License: MIT
 @Copyright: All reserved by yuhongliang<yuhongliang900@163.com>
 -->
@@ -39,3 +39,8 @@
 2. 代码文件，添加作者信息
 3. 剥离action type至单独文件，方便管理
 4. 接入reselect，避免不必要的状态更新导致的重绘，购物车场景很需要
+
+#### [2017.03.21]
+1. tabbar部分代码优化，减少代码量
+2. swiper部分代码优化，减少代码量
+3. 添加资讯列表，替换原来的清单列表

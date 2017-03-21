@@ -4,7 +4,7 @@
  * @Email:  yuhongliang900@163.com
  * @Filename: JDBaseListViewController.js
  * @Last modified by:   yuhongliang
- * @Last modified time: 20-Mar-2017
+ * @Last modified time: 21-Mar-2017
  * @License: MIT
  * @Copyright: All reserved by yuhongliang<yuhongliang900@163.com>
  */
@@ -33,6 +33,11 @@ const REFRESH_FOOTER_H = 40;
 export default class JDBaseListViewController extends Component {
     constructor(props) {
         super(props);
+    }
+
+    //release source
+    componentWillUnmount() {
+        console.log('release source');
     }
 
     onRefresh() {

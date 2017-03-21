@@ -4,7 +4,7 @@
  * @Email:  yuhongliang900@163.com
  * @Filename: NaviTabBar.js
  * @Last modified by:   yuhongliang
- * @Last modified time: 20-Mar-2017
+ * @Last modified time: 21-Mar-2017
  * @License: MIT
  * @Copyright: All reserved by yuhongliang<yuhongliang900@163.com>
  */
@@ -82,6 +82,9 @@ export default class NaviTabBar extends Component {
      */
     render() {
         let self = this;
+        //计算tab数
+        let numberOfTabs = this.props.tabs.length;
+        let width = (containerWidth - numberOfTabs * 10) / numberOfTabs;
 
         //遍历父组件传入的tabs属性，遍历title
         let tabLayout = this.props.tabs.map(function(tabTitle, i) {
@@ -93,26 +96,23 @@ export default class NaviTabBar extends Component {
                     onPress={() => {
                         self._tabTapped(i);
                     }}>
-                        <Text style={[styles.button, self.state.currentPage == i ? styles.red: '']}>{tabTitle}</Text>
+                        <Text style={[styles.button, {width}, self.state.currentPage == i ? styles.red: '']}>{tabTitle}</Text>
                     </TouchableHighlight>
                 </View>
             );
         });
-
-        //计算tab数
-        let numberOfTabs = this.props.tabs.length;
 
         //根据父组件的状态值，线性插值处理并更新
         // let left = this.props.scrollValue.interpolate({
         //     inputRange: [0, 1], outputRange: [0, containerWidth / numberOfTabs]
         // });
         let left = (containerWidth / numberOfTabs) * this.state.currentPage
-
         //渲染
         return (
                 <View>
                     <View style={{flexDirection: 'row'}}>{tabLayout}</View>
-                    <Animated.View style={[styles.naviTabBottomLine, {left}]}></Animated.View>
+                    <Animated.View style={
+                    [styles.naviTabBottomLine, {left}, {width}]}></Animated.View>
                 </View>
             );
     }
@@ -145,7 +145,6 @@ const styles = StyleSheet.create({
         marginLeft: 5,
         marginRight: 5,
         height: 40,
-        width: (containerWidth - 40) / 4,
         lineHeight: 40,
         color: '#333',
         fontSize: 14,
@@ -155,7 +154,6 @@ const styles = StyleSheet.create({
         position: 'absolute',
         bottom: 0,
         height: 2,
-        width: (containerWidth - 40) / 4,
         backgroundColor: '#ff334d'
     },
     red: {

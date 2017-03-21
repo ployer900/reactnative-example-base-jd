@@ -4,7 +4,7 @@
  * @Email:  yuhongliang900@163.com
  * @Filename: actionTypes.js
  * @Last modified by:   yuhongliang
- * @Last modified time: 20-Mar-2017
+ * @Last modified time: 21-Mar-2017
  * @License: MIT
  * @Copyright: All reserved by yuhongliang<yuhongliang900@163.com>
  */
@@ -34,3 +34,10 @@ export const FETCH_LIST_DATA_FAILURE = 'fetch list data failure';
 export const FETCH_SECKILL_DATA = 'fetch seckill data';
 export const FETCH_SECKILL_DATA_SUCCESS = 'fetch seckill data success';
 export const FETCH_SECKILL_DATA_FAILURE = 'fetch seckill data failure';
+
+
+///////// atc related actions ////////////////////
+///
+export const FETCH_ATC_DATA = 'fetch atc data';
+export const FETCH_ATC_DATA_SUCCESS = 'fetch atc data success';
+export const FETCH_ATC_DATA_FAILURE = 'fetch atc data failure';

@@ -4,7 +4,7 @@
  * @Email:  yuhongliang900@163.com
  * @Filename: App.js
  * @Last modified by:   yuhongliang
- * @Last modified time: 20-Mar-2017
+ * @Last modified time: 21-Mar-2017
  * @License: MIT
  * @Copyright: All reserved by yuhongliang<yuhongliang900@163.com>
  */
@@ -23,14 +23,35 @@
  /**
   * controllers
   */
- import DiscoverListViewController from '../controllers/find/DiscoverListViewController';
  import ActiveNaviViewController from '../controllers/active/ActiveNaviViewController';
- import SwiperableViewController from '../component/swiper/SwiperableViewController';
  import NavigatorViewControler from '../component/navigator/NavigatorViewController';
-
+ import DiscoverListSwiperableViewController from '../controllers/find/DiscoverListSwiperableViewController';
  //containers
  import SeckillViewControllerContainer from './SeckillViewControllerContainer';
- import DiscoverListViewControllerContainer from './DiscoverListViewControllerContainer';
+
+ ///tabbar items
+ const tabBarItems = [
+    {
+        controller: SeckillViewControllerContainer,
+        icon: require('../assets/images/tabbar/jd_home.png'),
+        tabTitle: 'MainTab'
+    },
+    {
+        controller: NavigatorViewControler,
+        icon: require('../assets/images/tabbar/jd_discover.png'),
+        tabTitle: 'DisTab'
+    },
+    {
+        controller: ActiveNaviViewController,
+        icon: require('../assets/images/tabbar/jd_active.png'),
+        tabTitle: 'ActiveTab'
+    },
+    {
+        controller: DiscoverListSwiperableViewController,
+        icon: require('../assets/images/tabbar/jd_synthetic.png'),
+        tabTitle: 'ChoiceTab'
+    }
+ ];
 
  export default class App extends Component {
 
@@ -64,63 +85,26 @@
                  tintColor='#ff0000'
                  barTintColor='white'
              >
-                 <TabBarIOS.Item
-                     title=''
-                     icon={require('../assets/images/tabbar/jd_home.png')}
-                     selected={this.state.selectedTab == 'MainTab'}
-                     onPress={() => {
-                         this.setState({
-                             selectedTab: 'MainTab'
-                         });
-                     }}
-                 >
-                 <SeckillViewControllerContainer></SeckillViewControllerContainer>
-                 </TabBarIOS.Item>
-
-                 <TabBarIOS.Item
-                     title=''
-                     icon={require('../assets/images/tabbar/jd_discover.png')}
-                     selected={this.state.selectedTab == 'DisTab'}
-                     onPress={() => {
-                         this.setState({
-                             selectedTab: 'DisTab'
-                         });
-                     }}
-                 >
-                 <NavigatorViewControler></NavigatorViewControler>
-                 </TabBarIOS.Item>
-
-                 <TabBarIOS.Item
-                     title=''
-                     icon={require('../assets/images/tabbar/jd_active.png')}
-                     selected={this.state.selectedTab == 'ActiveTab'}
-                     onPress={() => {
-                         this.setState({
-                             selectedTab: 'ActiveTab'
-                         });
-                     }}
-                 >
-                 <ActiveNaviViewController activityId={activityId}></ActiveNaviViewController>
-                 </TabBarIOS.Item>
-
-                 <TabBarIOS.Item
-                     title=''
-                     icon={require('../assets/images/tabbar/jd_synthetic.png')}
-                     selected={this.state.selectedTab == 'ChoiceTab'}
-                     onPress={() => {
-                         this.setState({
-                             selectedTab: 'ChoiceTab'
-                         });
-                     }}
-                 >
-                 <SwiperableViewController>
-                     <DiscoverListViewControllerContainer netWorkType={0} tabTitle={'好东西'} />
-                     <DiscoverListViewControllerContainer netWorkType={1} tabTitle={'优选清单'} />
-                     <DiscoverListViewControllerContainer netWorkType={2} tabTitle={'店铺头条'} />
-                     <DiscoverListViewControllerContainer netWorkType={0} tabTitle={'选礼神器'} />
-                 </SwiperableViewController>
-                 </TabBarIOS.Item>
-
+                {
+                    tabBarItems.map((item, index) => {
+                        let Controller = item.controller;
+                        return (
+                            <TabBarIOS.Item
+                                key={index}
+                                title=''
+                                icon={item.icon}
+                                selected={this.state.selectedTab == item.tabTitle}
+                                onPress={() => {
+                                    this.setState({
+                                        selectedTab: item.tabTitle
+                                    });
+                                }}
+                            >
+                            <Controller activityId = {activityId}></Controller>
+                            </TabBarIOS.Item>
+                        );
+                    })
+                }
              </TabBarIOS>
          )
      }

@@ -4,7 +4,7 @@
  * @Email:  yuhongliang900@163.com
  * @Filename: index.js
  * @Last modified by:   yuhongliang
- * @Last modified time: 20-Mar-2017
+ * @Last modified time: 21-Mar-2017
  * @License: MIT
  * @Copyright: All reserved by yuhongliang<yuhongliang900@163.com>
  */
@@ -74,6 +74,22 @@ export function getDiscoverInvetGroup(offSet) {
     return Request.getJSON(api.finderHost, params);
 }
 
+//////////////// 资讯列表 /////////////////////
+export const getJdDiscoveryAtcGroup = (page = 1, pageSize = 20, typeId, lastTopArticleTime = '', lastEndArticleTime = '') => {
+    let params = {
+        functionId: 'jdDiscoveryAtcList',
+        body: JSON.stringify({
+            page,
+            pageSize,
+            typeId,
+            lastTopArticleTime,
+            lastEndArticleTime
+        })
+    }
+    return Request.getJSON(api.finderHost, params);
+}
+
+
 /**
  * 通天塔首屏数据
  * @param  {[type]} activityId [description]
@@ -91,6 +107,7 @@ export function geth5BabelGenericChannel(activityId) {
     return Request.getJSON(api.h5ApiHost, params);
 }
 
+///////////// page propagation ///////////
 export function getBabelProductPaged(secondTabId, pageNum, type = 0) {
     let params = {
         functionId: 'getBabelProductPaged',
