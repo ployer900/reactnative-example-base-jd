@@ -37,12 +37,12 @@ react全家桶
 
 #### 5. 部分视觉效果
 
-![image](https://github.com/ployer900/reactnative-example-base-jd/blob/master/screenshort/seckill.png)
+![image](https://github.com/ployer900/reactnative-example-base-jd/blob/yuhl/screenshort/seckill.png)
 
-![image](https://github.com/ployer900/reactnative-example-base-jd/blob/master/screenshort/author.png)
+![image](https://github.com/ployer900/reactnative-example-base-jd/blob/yuhl/screenshort/author.png)
 
-![image](https://github.com/ployer900/reactnative-example-base-jd/blob/master/screenshort/active.png)
+![image](https://github.com/ployer900/reactnative-example-base-jd/blob/yuhl/screenshort/active.png)
 
-![image](https://github.com/ployer900/reactnative-example-base-jd/blob/master/screenshort/choice.png)
+![image](https://github.com/ployer900/reactnative-example-base-jd/blob/yuhl/screenshort/choice.png)
 
-![image](https://github.com/ployer900/reactnative-example-base-jd/blob/master/screenshort/list.png)
+![image](https://github.com/ployer900/reactnative-example-base-jd/blob/yuhl/screenshort/list.png)
